@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="DaWang&#39;s Bolg">
 <meta property="og:description" content="背包问题应该是动态规划思想经典中的经典案例，是很多问题的源头。但真的是看一次忘一次，今天记录下来以便日后参考。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-17T06:30:17.655Z">
+<meta property="og:updated_time" content="2018-03-17T06:51:35.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="背包问题">
 <meta name="twitter:description" content="背包问题应该是动态规划思想经典中的经典案例，是很多问题的源头。但真的是看一次忘一次，今天记录下来以便日后参考。">
@@ -452,7 +452,8 @@
     }
 }
 </code></pre><p><strong>优化：</strong>时间复杂度已经最优。空间复杂度为O(nW)，可在空间上优化，其实我们不难发现，dp[i][j]只需利用dp[i-1][j]的内容即可，因此可以使用一维数组替换二维数组，空间复杂度优化为O(W)。</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>与上面的0-1背包不同的是，每件物品的数量是无限的。状态转移公式变为<br>$$dp[i][j] = min(dp[i-1][j-k<em>w[i]] + k</em>v[i]), k \in [0, W/w[i]]$$，</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>与上面的0-1背包不同的是，每件物品的数量是无限的。状态转移公式变为 dp[i][j] = min(dp[i-1][j-k*w[i]] + k*v[i]), 0 &lt;= k &lt;= W/w[i]，即第i件物品可以选择[0, W/w[i]]件。</p>
+<h3 id="多重问题"><a href="#多重问题" class="headerlink" title="多重问题"></a>多重问题</h3><p>在完全背包问题的基础上，可以延伸到第i件物品有c[i]件，明显k的范围为[0, min(c[i], W/w[i])]。</p>
 
       
     </div>
@@ -641,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包"><span class="nav-number">3.1.</span> <span class="nav-text">完全背包</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包"><span class="nav-number">3.1.</span> <span class="nav-text">完全背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重问题"><span class="nav-number">3.2.</span> <span class="nav-text">多重问题</span></a></li></ol></li></ol></div>
             
 
           </div>
