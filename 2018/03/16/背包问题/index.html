@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode, 博客, C++, Hexo" />
+  <meta name="keywords" content="动态规划,背包问题," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切技术大牛，希望自己也能成为一个有技术的人。喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。 教育 本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6 硕士 大连理工大学 软件工程 2016.9 - 至今">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="https://jinleiw.github.io/about/index.html">
+<meta name="description" content="背包问题应该是动态规划思想经典中的经典案例，是很多问题的源头。但真的是看一次忘一次，今天记录下来以便日后参考。">
+<meta name="keywords" content="动态规划,背包问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="背包问题">
+<meta property="og:url" content="https://jinleiw.github.io/2018/03/16/背包问题/index.html">
 <meta property="og:site_name" content="DaWang&#39;s Bolg">
-<meta property="og:description" content="大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切技术大牛，希望自己也能成为一个有技术的人。喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。 教育 本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6 硕士 大连理工大学 软件工程 2016.9 - 至今">
+<meta property="og:description" content="背包问题应该是动态规划思想经典中的经典案例，是很多问题的源头。但真的是看一次忘一次，今天记录下来以便日后参考。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T07:58:58.926Z">
+<meta property="og:updated_time" content="2018-03-17T06:30:17.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切技术大牛，希望自己也能成为一个有技术的人。喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。 教育 本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6 硕士 大连理工大学 软件工程 2016.9 - 至今">
+<meta name="twitter:title" content="背包问题">
+<meta name="twitter:description" content="背包问题应该是动态规划思想经典中的经典案例，是很多问题的源头。但真的是看一次忘一次，今天记录下来以便日后参考。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://jinleiw.github.io/about/"/>
+  <link rel="canonical" href="https://jinleiw.github.io/2018/03/16/背包问题/"/>
 
 
 
 
 
-  <title>关于我 | DaWang's Bolg</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>背包问题 | DaWang's Bolg</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -248,38 +249,270 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jinleiw.github.io/2018/03/16/背包问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jinleiW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/snoopy.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaWang's Bolg">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切<strong>技术大牛</strong>，希望自己也能成为一个有技术的人。<br>喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。</p>
-<h2 id="教育"><a href="#教育" class="headerlink" title="教育"></a>教育</h2><ul>
-<li>本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6</li>
-<li>硕士 大连理工大学 软件工程 2016.9 - 至今</li>
-</ul>
-
+          <h1 class="post-title" itemprop="name headline">背包问题</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T21:45:55+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <script type="text/javascript" src="https://http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<p>背包问题应该是动态规划思想经典中的经典案例，是很多问题的源头。但真的是看一次忘一次，今天记录下来以便日后参考。</p>
+<a id="more"></a>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>给一个容量为W的背包和n件物品，第i件物品的价值为v[i]，重量为w[i],求出背包最多能容纳价值为多少的物品。</p>
+<p><strong>第一错误反应：</strong>计算每件物品的价格，依次选择较“贵重”的物品。这是<em>贪心算法</em>，不同于动态规划。看下面的例子：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">物品</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">重量</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">价值</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">均价</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+</tr>
+</tbody>
+</table>
+<p>假设背包总重量为5，按照<em>贪心算法</em>会优先选择1和2号物品，此时3号已经无法装入，总价值为16。实际上装入2和3号是最优选择，总价值为22。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>这是最基础的0-1背包问题，即n件物品各有一件，要么装入要么舍弃。dp[i][j]代表背包容量为j，且只有前i件物品可选择时的最优结果。状态转移过程就是：dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]] + v[i])，dp[i-1][j]是不选择第i件物品的最优结果；如果选择了第i件物品，最优结果就是<strong><em>第i件物品的价值</em></strong> + <strong><em>减去第i件物品重量时的背包容量的最优值</em></strong>。可能读上去比较拗口，继续看上面的例子：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">16</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">22</td>
+</tr>
+</tbody>
+</table>
+<p>第二行和第二列均为0，即没有物品可选择和背包容量为0的情况，结果均为0。<br>第三行只有物品1可选择，结果都为6；第三列背包容量只有1，结果仍为6。<br>按照转移公式，dp[2][2] = max(dp[1][2], dp[1][2-w[2]] + v[2])，得dp[2][2] = 10。<br>以此类推…最终求得最优解22。</p>
+<p>代码：</p>
+<pre><code>for (int i = 1; i&lt;=n; i++){
+    for (int j = 1; j&lt;=W; j++){
+        if (w[i] &lt;= j){
+            dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]] + v[i]);
+        }else{
+            dp[i][j] = dp[i-1][j];
+        }
+    }
+}
+</code></pre><p><strong>优化：</strong>时间复杂度已经最优。空间复杂度为O(nW)，可在空间上优化，其实我们不难发现，dp[i][j]只需利用dp[i-1][j]的内容即可，因此可以使用一维数组替换二维数组，空间复杂度优化为O(W)。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>与上面的0-1背包不同的是，每件物品的数量是无限的。状态转移公式变为<br>$$dp[i][j] = min(dp[i-1][j-k<em>w[i]] + k</em>v[i]), k \in [0, W/w[i]]$$，</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+            <a href="/tags/背包问题/" rel="tag"># 背包问题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/最小调整代价和/" rel="next" title="最小调整代价和">
+                <i class="fa fa-chevron-left"></i> 最小调整代价和
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -408,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教育"><span class="nav-number">1.</span> <span class="nav-text">教育</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包"><span class="nav-number">3.1.</span> <span class="nav-text">完全背包</span></a></li></ol></li></ol></div>
             
 
           </div>
