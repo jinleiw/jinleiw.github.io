@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode, 博客, C++, Hexo" />
+  <meta name="keywords" content="memset,c++," />
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切技术大牛，希望自己也能成为一个有技术的人。喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。 教育 本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6 硕士 大连理工大学 软件工程 2016.9 - 至今">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="https://jinleiw.github.io/about/index.html">
+<meta name="description" content="memset函数，按照字节的方式对内存进行初始化，经常在动态开辟空间后使用，比如new、malloc。涉及到内存的东西都需要小心使用，否则可能会给程序造成致命错误。">
+<meta name="keywords" content="memset,c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="memset函数和它的误区">
+<meta property="og:url" content="https://jinleiw.github.io/2018/03/18/memset函数和它的误区/index.html">
 <meta property="og:site_name" content="DaWang&#39;s Bolg">
-<meta property="og:description" content="大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切技术大牛，希望自己也能成为一个有技术的人。喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。 教育 本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6 硕士 大连理工大学 软件工程 2016.9 - 至今">
+<meta property="og:description" content="memset函数，按照字节的方式对内存进行初始化，经常在动态开辟空间后使用，比如new、malloc。涉及到内存的东西都需要小心使用，否则可能会给程序造成致命错误。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T07:58:58.926Z">
+<meta property="og:image" content="https://jinleiw.github.io/images/开辟二维数组-二维指针.jpg">
+<meta property="og:updated_time" content="2018-03-18T09:56:17.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切技术大牛，希望自己也能成为一个有技术的人。喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。 教育 本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6 硕士 大连理工大学 软件工程 2016.9 - 至今">
+<meta name="twitter:title" content="memset函数和它的误区">
+<meta name="twitter:description" content="memset函数，按照字节的方式对内存进行初始化，经常在动态开辟空间后使用，比如new、malloc。涉及到内存的东西都需要小心使用，否则可能会给程序造成致命错误。">
+<meta name="twitter:image" content="https://jinleiw.github.io/images/开辟二维数组-二维指针.jpg">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://jinleiw.github.io/about/"/>
+  <link rel="canonical" href="https://jinleiw.github.io/2018/03/18/memset函数和它的误区/"/>
 
 
 
 
 
-  <title>关于我 | DaWang's Bolg</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>memset函数和它的误区 | DaWang's Bolg</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -248,38 +251,201 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jinleiw.github.io/2018/03/18/memset函数和它的误区/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jinleiW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/snoopy.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaWang's Bolg">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>大汪（喜欢狗而起此名），渣硕二年级在读，敬畏一切<strong>技术大牛</strong>，希望自己也能成为一个有技术的人。<br>喜欢健身，喜欢跑步，喜欢唱歌，偶尔会把自己关在寝室瞎吼，还没有扰民被打经历。</p>
-<h2 id="教育"><a href="#教育" class="headerlink" title="教育"></a>教育</h2><ul>
-<li>本科 大连理工大学 软件工程（日语强化） 2012.9 - 2016.6</li>
-<li>硕士 大连理工大学 软件工程 2016.9 - 至今</li>
-</ul>
-
+          <h1 class="post-title" itemprop="name headline">memset函数和它的误区</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T16:31:11+08:00">
+                2018-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>memset函数，按照字节的方式对内存进行初始化，经常在动态开辟空间后使用，比如new、malloc。涉及到内存的东西都需要小心使用，否则可能会给程序造成致命错误。</p>
+<a id="more"></a>
+<h2 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h2><p>void<em> memset(void</em> dest, int ch, std::size_t count);<br>将dest指针后的count个<strong>字节（看好是字节）</strong>初始化为ch。返回值是被初始化位置的头指针dest。</p>
+<p>更官方的说明参考<strong><a href="http://http://en.cppreference.com/w/cpp/string/byte/memset" title="memset" target="_blank" rel="noopener">http://http://en.cppreference.com/w/cpp/string/byte/memset</a></strong></p>
+<h2 id="误区"><a href="#误区" class="headerlink" title="误区"></a>误区</h2><p>曾经的我遇到这样的小需求，就是开辟了一个一维数组，想把它初始化为1…然后我就想到了memset可以快速初始化一块内存，完美！然后就写下下面代码：</p>
+<pre><code>int *p = new int[10];
+memset(p, 1, sizeof(int)*10);
+</code></pre><p>然后就是无论如何我都得不到想要的结果，感觉编译器出现了问题…然后我又想到老师说过：<strong>一定要从自己的程序中找问题，而不要找编译器的问题</strong>。仿佛世界都在欺骗我…</p>
+<p>问题出哪了呢？可能你已经看出问题并觉得我是个傻子，没错，我也觉得我是个傻子。</p>
+<p>首先要记住，memset函数是按照 <strong>字节字节字节</strong> 的方式初始化的，上面代码的第一行将每个字节初始化1，即</p>
+<p>00000001 00000001 00000001 000000001…</p>
+<p>总共有sizeof(int)*10 = 40个字节都被填充为 00000001，而一个int型整数占 <strong>4个字节4个字节4个字节</strong>， 所以，我是个傻子…</p>
+<p>当然，如果数组是char型就没有问题了。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>还是我这个傻子遇到的问题…这个问题又设计到了指向指针的指针…<br>我需要一个二维int型数组，并且数组中的所有元素置0，我就写下了下面的代码：</p>
+<pre><code>int **p = new int*[10];
+for (int i = 0; i&lt;10; i++)
+    p[i] = new int[10];
+
+memset(p, 0, sizeof(int)*10*10));
+</code></pre><p>自己感觉很对啊，10x10的二维数组，将p位置后的sizeof(int)*10*10个字节置0，真方便，memset大法好。</p>
+<p>然后编译器一直提示我：<strong>越界越界越界</strong>。生无可恋…</p>
+<p>原来我对<strong>指向指针的指针</strong>理解偏差这么远，如下图：</p>
+<img src="/images/开辟二维数组-二维指针.jpg" class="[二维数组]">
+<p>p指向二维数组的开头，代码中的for循环开辟一维数组，而memset将p[0], [1], p[2]… 置为0，那p[0]是什么呢？</p>
+<p>p[0] - p[9]就是指向每一维的数组…p[9]之后的不一定是什么了…所以就是说，刚开辟好的二维数组被搞丢了，找不到了，更释放不了…并且还将不知道的内存置0了，真的很危险…</p>
+<h2 id="正确的做法"><a href="#正确的做法" class="headerlink" title="正确的做法"></a>正确的做法</h2><p>看数组类型，如果是char类型数组以外的数组，注意可能会事与愿违。</p>
+<h3 id="针对二维数组"><a href="#针对二维数组" class="headerlink" title="针对二维数组"></a>针对二维数组</h3><p>针对二维数组，可以这样初始化。</p>
+<pre><code>int **p = new int*[10];
+for (int i = 0; i&lt;10; i++){
+    p[i] = new int[10];
+    memset(p[i], 0, sizeof(int)*10);
+    //或者直接在开辟时初始化，末尾加上括号即可。
+    //p[i] = new int[10]();
+}
+</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/memset/" rel="tag"># memset</a>
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/16/背包问题/" rel="next" title="背包问题">
+                <i class="fa fa-chevron-left"></i> 背包问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -408,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教育"><span class="nav-number">1.</span> <span class="nav-text">教育</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数介绍"><span class="nav-number">1.</span> <span class="nav-text">函数介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#误区"><span class="nav-number">2.</span> <span class="nav-text">误区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确的做法"><span class="nav-number">4.</span> <span class="nav-text">正确的做法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#针对二维数组"><span class="nav-number">4.1.</span> <span class="nav-text">针对二维数组</span></a></li></ol></li></ol></div>
             
 
           </div>
