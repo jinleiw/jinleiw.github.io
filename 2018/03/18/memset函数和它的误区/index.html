@@ -88,7 +88,7 @@
 <meta property="og:description" content="memset函数，按照字节的方式对内存进行初始化，经常在动态开辟空间后使用，比如new、malloc。涉及到内存的东西都需要小心使用，否则可能会给程序造成致命错误。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://jinleiw.github.io/images/开辟二维数组-二维指针.jpg">
-<meta property="og:updated_time" content="2018-03-18T09:56:17.328Z">
+<meta property="og:updated_time" content="2018-03-19T00:51:26.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="memset函数和它的误区">
 <meta name="twitter:description" content="memset函数，按照字节的方式对内存进行初始化，经常在动态开辟空间后使用，比如new、malloc。涉及到内存的东西都需要小心使用，否则可能会给程序造成致命错误。">
@@ -365,7 +365,7 @@ memset(p, 1, sizeof(int)*10);
 <p>00000001 00000001 00000001 000000001…</p>
 <p>总共有sizeof(int)*10 = 40个字节都被填充为 00000001，而一个int型整数占 <strong>4个字节4个字节4个字节</strong>， 所以，我是个傻子…</p>
 <p>当然，如果数组是char型就没有问题了。</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>还是我这个傻子遇到的问题…这个问题又设计到了指向指针的指针…<br>我需要一个二维int型数组，并且数组中的所有元素置0，我就写下了下面的代码：</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>还是我这个傻子遇到的问题…这个问题又涉及到了指向指针的指针…<br>我需要一个二维int型数组，并且数组中的所有元素置0，我就写下了下面的代码：</p>
 <pre><code>int **p = new int*[10];
 for (int i = 0; i&lt;10; i++)
     p[i] = new int[10];
@@ -377,7 +377,7 @@ memset(p, 0, sizeof(int)*10*10));
 <img src="/images/开辟二维数组-二维指针.jpg" class="[二维数组]">
 <p>p指向二维数组的开头，代码中的for循环开辟一维数组，而memset将p[0], [1], p[2]… 置为0，那p[0]是什么呢？</p>
 <p>p[0] - p[9]就是指向每一维的数组…p[9]之后的不一定是什么了…所以就是说，刚开辟好的二维数组被搞丢了，找不到了，更释放不了…并且还将不知道的内存置0了，真的很危险…</p>
-<h2 id="正确的做法"><a href="#正确的做法" class="headerlink" title="正确的做法"></a>正确的做法</h2><p>看数组类型，如果是char类型数组以外的数组，注意可能会事与愿违。</p>
+<h2 id="正确的做法"><a href="#正确的做法" class="headerlink" title="正确的做法"></a>正确的做法</h2><p>看数组类型，如果是char类型数组以外的数组，注意可能会事与愿违。时刻记住memset是按<strong>字节</strong>进行填充的。</p>
 <h3 id="针对二维数组"><a href="#针对二维数组" class="headerlink" title="针对二维数组"></a>针对二维数组</h3><p>针对二维数组，可以这样初始化。</p>
 <pre><code>int **p = new int*[10];
 for (int i = 0; i&lt;10; i++){
@@ -427,6 +427,10 @@ for (int i = 0; i&lt;10; i++){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/21/网络/" rel="prev" title="网络">
+                网络 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -509,7 +513,7 @@ for (int i = 0; i&lt;10; i++){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -531,7 +535,7 @@ for (int i = 0; i&lt;10; i++){
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -594,7 +598,7 @@ for (int i = 0; i&lt;10; i++){
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -791,7 +795,24 @@ for (int i = 0; i&lt;10; i++){
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
   
 
 
